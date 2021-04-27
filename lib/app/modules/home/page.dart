@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tmdb_api/app/modules/home/controller.dart';
 import 'package:tmdb_api/app/modules/home/widgets/buttons_bar.dart';
+import 'package:tmdb_api/app/modules/home/widgets/top_rated_carousel.dart';
 import 'package:tmdb_api/app/modules/home/widgets/popular_carousel.dart';
-import 'package:tmdb_api/app/modules/home/widgets/recommended_carousel.dart';
 import 'package:tmdb_api/app/modules/home/widgets/search_bar.dart';
 import 'package:tmdb_api/app/modules/home/widgets/series_carousel.dart';
 import 'package:tmdb_api/app/theme/app_theme.dart';
@@ -24,9 +24,22 @@ class HomePage extends GetView<HomeController> {
           mainAxisSize: MainAxisSize.min,
           children: [
             SearchBar(),
-            PopularCarousel(),
+            Obx(() => SizedBox(
+                  height: Get.height * 0.3,
+                  child: ListView.builder(
+                      physics: ClampingScrollPhysics(),
+                      itemCount: controller.movieList.length,
+                      shrinkWrap: true,
+                      scrollDirection: Axis.horizontal,
+                      itemBuilder: (context, index) {
+                        return Text(
+                          controller.movieList[index].title,
+                          style: TextStyle(color: Colors.red, fontSize: 20),
+                        );
+                      }),
+                )),
             ButtonsBar(),
-            RecommendedCarousel(),
+            PopularCarousel(),
             SeriesCarousel(),
           ],
         ),
