@@ -5,6 +5,7 @@ import 'package:tmdb_api/app/modules/home/widgets/buttons_bar.dart';
 import 'package:tmdb_api/app/modules/home/widgets/popular_carousel.dart';
 import 'package:tmdb_api/app/modules/home/widgets/recommended_carousel.dart';
 import 'package:tmdb_api/app/modules/home/widgets/search_bar.dart';
+import 'package:tmdb_api/app/modules/home/widgets/series_carousel.dart';
 import 'package:tmdb_api/app/theme/app_theme.dart';
 
 class HomePage extends GetView<HomeController> {
@@ -19,20 +20,15 @@ class HomePage extends GetView<HomeController> {
       ),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
-        child: Padding(
-          padding: const EdgeInsets.all(18.0),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              SearchBar(),
-              SizedBox(height: 30),
-              PopularCarousel(),
-              SizedBox(height: 30),
-              ButtonsBar(),
-              SizedBox(height: 30),
-              RecommendedCarousel(),
-            ],
-          ),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            SearchBar(),
+            PopularCarousel(),
+            ButtonsBar(),
+            RecommendedCarousel(),
+            SeriesCarousel(),
+          ],
         ),
       ),
     );
