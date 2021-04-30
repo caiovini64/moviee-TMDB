@@ -1,32 +1,42 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:tmdb_api/app/modules/home/widgets/custom_carousel.dart';
-import 'package:tmdb_api/app/theme/app_theme.dart';
+import 'package:tmdb_api/app/modules/home/controller.dart';
 
 class TopRatedCarousel extends StatelessWidget {
-  final title;
-  TopRatedCarousel(this.title);
+  const TopRatedCarousel({
+    @required this.controller,
+  });
+
+  final HomeController controller;
+
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 30),
-      child: CustomCarousel(
-        childCount: 5,
-        childHeight: 0.3,
-        child: GestureDetector(
-          onTap: () {},
-          child: Padding(
-            padding: const EdgeInsets.only(left: 18),
-            child: Container(
-              width: Get.width * 0.85,
-              decoration: BoxDecoration(
-                color: AppTheme.to.darkTheme.accentColor,
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: Text(title),
-            ),
-          ),
-        ),
+    //TODO: Terminar esse widget
+    return controller.obx(
+      (state) => SizedBox(
+        height: Get.height * 0.24,
+        child: ListView.builder(
+            physics: ClampingScrollPhysics(),
+            itemCount: 5,
+            shrinkWrap: true,
+            scrollDirection: Axis.horizontal,
+            itemBuilder: (context, index) {
+              final movie = controller.movieList[index];
+              return Padding(
+                padding: const EdgeInsets.only(left: 18.0, bottom: 30),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(10),
+                  child: Image(
+                    image:
+                        NetworkImage(controller.urlPath + movie.backdropPath),
+                  ),
+                ),
+              );
+            }),
+      ),
+      onLoading: Center(child: CircularProgressIndicator()),
+      onError: (error) => Center(
+        child: Text('error'),
       ),
     );
   }
