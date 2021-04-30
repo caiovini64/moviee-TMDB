@@ -24,20 +24,7 @@ class HomePage extends GetView<HomeController> {
           mainAxisSize: MainAxisSize.min,
           children: [
             SearchBar(),
-            Obx(() => SizedBox(
-                  height: Get.height * 0.3,
-                  child: ListView.builder(
-                      physics: ClampingScrollPhysics(),
-                      itemCount: controller.movieList.length,
-                      shrinkWrap: true,
-                      scrollDirection: Axis.horizontal,
-                      itemBuilder: (context, index) {
-                        return Text(
-                          controller.movieList[index].title,
-                          style: TextStyle(color: Colors.red, fontSize: 20),
-                        );
-                      }),
-                )),
+            TopRatedCarousel(controller: controller),
             ButtonsBar(),
             PopularCarousel(),
             SeriesCarousel(),
