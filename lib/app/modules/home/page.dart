@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tmdb_api/app/modules/home/controller.dart';
 import 'package:tmdb_api/app/modules/home/widgets/buttons_bar.dart';
+import 'package:tmdb_api/app/modules/home/widgets/skeleton.dart';
 import 'package:tmdb_api/app/modules/home/widgets/top_rated_carousel.dart';
 import 'package:tmdb_api/app/modules/home/widgets/popular_carousel.dart';
 import 'package:tmdb_api/app/modules/home/widgets/search_bar.dart';
@@ -18,18 +19,21 @@ class HomePage extends GetView<HomeController> {
         backgroundColor: Colors.transparent,
         elevation: 0,
       ),
-      body: SingleChildScrollView(
-        scrollDirection: Axis.vertical,
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            SearchBar(),
-            TopRatedCarousel(),
-            ButtonsBar(),
-            PopularCarousel(),
-            SeriesCarousel(),
-          ],
+      body: controller.obx(
+        (state) => SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              SearchBar(),
+              TopRatedCarousel(),
+              ButtonsBar(),
+              PopularCarousel(),
+              SeriesCarousel(),
+            ],
+          ),
         ),
+        onLoading: Skeleton(),
       ),
     );
   }
