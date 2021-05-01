@@ -3,10 +3,14 @@ import 'package:tmdb_api/app/data/models/movie_model.dart';
 import 'package:tmdb_api/app/data/repositories/movie_repository.dart';
 
 class HomeController extends GetxController with StateMixin<List<MovieModel>> {
-  final _movieRepository = Get.find<MovieRepository>();
-  RxList<MovieModel> movieList = <MovieModel>[].obs;
+  RxList<MovieModel> _movieListTopRated = <MovieModel>[].obs;
+  RxList<MovieModel> _movieListPopular = <MovieModel>[].obs;
+
   final urlPath = 'https://image.tmdb.org/t/p/original/';
   var screenSize = Get.mediaQuery;
+
+  get movieListTopRated => _movieListTopRated;
+  get movieListPopular => _movieListPopular;
 
   @override
   void onInit() {
@@ -15,11 +19,17 @@ class HomeController extends GetxController with StateMixin<List<MovieModel>> {
     }, onError: (error) {
       change(null, status: RxStatus.error('Erro ao buscar filmes'));
     });
+    loadPopularMovies();
     super.onInit();
   }
 
   Future<RxList<MovieModel>> loadTopRatedMovies() async {
-    movieList.assignAll(await _movieRepository.getAllTopRated());
-    return movieList;
+    _movieListTopRated.assignAll(await MovieRepository.getAllTopRated());
+    return _movieListTopRated;
+  }
+
+  Future<RxList<MovieModel>> loadPopularMovies() async {
+    _movieListPopular.assignAll(await MovieRepository.getAllPopular());
+    return _movieListPopular;
   }
 }
