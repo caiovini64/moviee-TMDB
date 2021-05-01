@@ -13,7 +13,7 @@ class HomePage extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppTheme.to.darkTheme.backgroundColor,
+      backgroundColor: AppTheme.to.theme.backgroundColor,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -24,7 +24,7 @@ class HomePage extends GetView<HomeController> {
           mainAxisSize: MainAxisSize.min,
           children: [
             SearchBar(),
-            TopRatedCarousel(controller: controller),
+            TopRatedCarousel(),
             ButtonsBar(),
             PopularCarousel(),
             SeriesCarousel(),

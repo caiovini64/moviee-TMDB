@@ -15,7 +15,7 @@ class ButtonsBar extends StatelessWidget {
               height: Get.height * 0.07,
               width: Get.width * 0.3,
               decoration: BoxDecoration(
-                color: AppTheme.to.darkTheme.accentColor,
+                color: AppTheme.to.theme.accentColor,
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(10),
                   bottomLeft: Radius.circular(10),
@@ -24,7 +24,7 @@ class ButtonsBar extends StatelessWidget {
               child: Center(
                 child: Text(
                   'Movies',
-                  style: AppTheme.to.darkTheme.textTheme.bodyText1,
+                  style: AppTheme.to.theme.textTheme.bodyText1,
                 ),
               ),
             ),
@@ -33,12 +33,12 @@ class ButtonsBar extends StatelessWidget {
               height: Get.height * 0.07,
               width: Get.width * 0.3,
               decoration: BoxDecoration(
-                color: AppTheme.to.darkTheme.accentColor,
+                color: AppTheme.to.theme.accentColor,
               ),
               child: Center(
                 child: Text(
                   'TV Shows',
-                  style: AppTheme.to.darkTheme.textTheme.bodyText1,
+                  style: AppTheme.to.theme.textTheme.bodyText1,
                 ),
               ),
             ),
@@ -47,7 +47,7 @@ class ButtonsBar extends StatelessWidget {
               width: Get.width * 0.3,
               height: Get.height * 0.07,
               decoration: BoxDecoration(
-                color: AppTheme.to.darkTheme.accentColor,
+                color: AppTheme.to.theme.accentColor,
                 borderRadius: BorderRadius.only(
                   topRight: Radius.circular(10),
                   bottomRight: Radius.circular(10),
@@ -56,7 +56,7 @@ class ButtonsBar extends StatelessWidget {
               child: Center(
                 child: Text(
                   'People',
-                  style: AppTheme.to.darkTheme.textTheme.bodyText1,
+                  style: AppTheme.to.theme.textTheme.bodyText1,
                 ),
               ),
             ),

@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
-import 'package:tmdb_api/app/data/api_base.dart';
+import 'package:tmdb_api/app/utils/values/api_base.dart';
 
 class MovieProvider {
   Future<Map<String, dynamic>> getAllTopRated() async {

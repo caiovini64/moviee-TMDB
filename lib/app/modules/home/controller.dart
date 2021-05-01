@@ -6,6 +6,7 @@ class HomeController extends GetxController with StateMixin<List<MovieModel>> {
   final _movieRepository = Get.find<MovieRepository>();
   RxList<MovieModel> movieList = <MovieModel>[].obs;
   final urlPath = 'https://image.tmdb.org/t/p/original/';
+  var screenSize = Get.mediaQuery;
 
   @override
   void onInit() {

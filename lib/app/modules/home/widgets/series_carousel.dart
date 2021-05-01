@@ -16,13 +16,13 @@ class SeriesCarousel extends StatelessWidget {
             children: [
               Text(
                 'Series',
-                style: AppTheme.to.darkTheme.textTheme.headline1,
+                style: AppTheme.to.theme.textTheme.headline1,
               ),
               IconButton(
                 onPressed: () {},
                 icon: Icon(
                   Icons.arrow_forward_ios,
-                  color: AppTheme.to.darkTheme.buttonColor,
+                  color: AppTheme.to.theme.buttonColor,
                 ),
               )
             ],
@@ -38,7 +38,7 @@ class SeriesCarousel extends StatelessWidget {
               child: Container(
                 width: Get.width * 0.3,
                 decoration: BoxDecoration(
-                  color: AppTheme.to.darkTheme.accentColor,
+                  color: AppTheme.to.theme.accentColor,
                   borderRadius: BorderRadius.circular(10),
                 ),
               ),

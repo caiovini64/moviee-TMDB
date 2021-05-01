@@ -3,11 +3,7 @@ import 'package:get/get.dart';
 import 'package:tmdb_api/app/modules/home/controller.dart';
 
 class TopRatedCarousel extends StatelessWidget {
-  const TopRatedCarousel({
-    @required this.controller,
-  });
-
-  final HomeController controller;
+  final HomeController controller = Get.find();
 
   @override
   Widget build(BuildContext context) {
