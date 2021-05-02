@@ -9,25 +9,27 @@ class MovieModel {
   String title;
 
   MovieModel({
-    this.adult,
-    this.backdropPath,
-    this.genreIds,
-    this.id,
-    this.overview,
-    this.posterPath,
-    this.releaseDate,
-    this.title,
+    required this.adult,
+    required this.backdropPath,
+    required this.genreIds,
+    required this.id,
+    required this.overview,
+    required this.posterPath,
+    required this.releaseDate,
+    required this.title,
   });
 
-  MovieModel.fromJson(Map<String, dynamic> json) {
-    adult = json['adult'];
-    backdropPath = json['backdrop_path'];
-    genreIds = json['genre_ids'].cast<int>();
-    id = json['id'];
-    overview = json['overview'];
-    posterPath = json['poster_path'];
-    releaseDate = json['release_date'];
-    title = json['title'];
+  factory MovieModel.fromJson(Map<String, dynamic> json) {
+    return MovieModel(
+      adult: json['adult'],
+      backdropPath: json['backdrop_path'],
+      genreIds: json['genre_ids'].cast<int>(),
+      id: json['id'],
+      overview: json['overview'],
+      posterPath: json['poster_path'],
+      releaseDate: json['release_date'],
+      title: json['title'],
+    );
   }
 
   Map<String, dynamic> toJson() {

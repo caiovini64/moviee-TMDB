@@ -5,7 +5,11 @@ class CustomCarousel extends StatelessWidget {
   final Widget child;
   final double childHeight;
   final int childCount;
-  const CustomCarousel({this.child, this.childHeight, this.childCount});
+  const CustomCarousel({
+    required this.child,
+    required this.childHeight,
+    required this.childCount,
+  });
   @override
   Widget build(BuildContext context) {
     return SizedBox(
