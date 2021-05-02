@@ -6,7 +6,7 @@ class ButtonsBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 18, right: 18, bottom: 30),
+      padding: const EdgeInsets.only(left: 18, right: 18, bottom: 20),
       child: Container(
         height: Get.height * 0.07,
         child: Row(

@@ -1,9 +1,7 @@
-import 'package:get/get.dart';
 import 'package:tmdb_api/app/data/models/movie_model.dart';
 import 'package:tmdb_api/app/data/providers/movie_provider.dart';
 
 class MovieRepository {
-  //TODO: Estudar como tornar static
   static Future<List<MovieModel>> getAllTopRated() async {
     List<MovieModel> list = <MovieModel>[];
     Map json = await MovieProvider.getAllTopRated();

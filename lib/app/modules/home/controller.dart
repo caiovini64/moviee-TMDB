@@ -17,9 +17,12 @@ class HomeController extends GetxController with StateMixin<List<MovieModel>> {
     loadTopRatedMovies().then((response) {
       change(response, status: RxStatus.success());
     }, onError: (error) {
-      change(null, status: RxStatus.error('Erro ao buscar filmes'));
+      change(null, status: RxStatus.error('Erro ao consumir api'));
     });
-    loadPopularMovies();
+    loadPopularMovies().then(
+        (response) => change(response, status: RxStatus.success()),
+        onError: (error) =>
+            change(null, status: RxStatus.error('Erro ao consumir api')));
     super.onInit();
   }
 

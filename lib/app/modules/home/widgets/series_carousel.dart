@@ -10,26 +10,23 @@ class SeriesCarousel extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         Padding(
-          padding: const EdgeInsets.only(left: 18, right: 18, bottom: 18),
+          padding: const EdgeInsets.only(left: 18, right: 18, bottom: 15),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                'Series',
+                'TV SERIES',
                 style: AppTheme.to.theme.textTheme.headline1,
               ),
-              IconButton(
+              TextButton(
+                child: Text('Show all'),
                 onPressed: () {},
-                icon: Icon(
-                  Icons.arrow_forward_ios,
-                  color: AppTheme.to.theme.buttonColor,
-                ),
-              )
+              ),
             ],
           ),
         ),
         Padding(
-          padding: const EdgeInsets.only(bottom: 30),
+          padding: const EdgeInsets.only(bottom: 20),
           child: CustomCarousel(
             childCount: 5,
             childHeight: 0.2,
