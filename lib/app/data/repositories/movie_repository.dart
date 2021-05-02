@@ -3,24 +3,24 @@ import 'package:tmdb_api/app/data/providers/movie_provider.dart';
 
 class MovieRepository {
   static Future<List<MovieModel>> getAllTopRated() async {
-    List<MovieModel> list = <MovieModel>[];
+    List<MovieModel> _list = <MovieModel>[];
     Map json = await MovieProvider.getAllTopRated();
     final movies = json['results'] as List;
     movies.forEach((element) {
       final movieElement = MovieModel.fromJson(element);
-      list.add(movieElement);
+      _list.add(movieElement);
     });
-    return list;
+    return _list;
   }
 
   static Future<List<MovieModel>> getAllPopular() async {
-    List<MovieModel> list = <MovieModel>[];
+    List<MovieModel> _list = <MovieModel>[];
     Map json = await MovieProvider.getAllPopular();
     final movies = json['results'] as List;
     movies.forEach((element) {
       final movieElement = MovieModel.fromJson(element);
-      list.add(movieElement);
+      _list.add(movieElement);
     });
-    return list;
+    return _list;
   }
 }

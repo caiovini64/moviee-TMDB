@@ -1,14 +1,14 @@
 class MovieModel {
-  bool adult;
-  String backdropPath;
-  List<int> genreIds;
-  int id;
-  String overview;
-  String posterPath;
-  String releaseDate;
-  String title;
+  final bool adult;
+  final String backdropPath;
+  final List<int> genreIds;
+  final int id;
+  final String overview;
+  final String posterPath;
+  final String releaseDate;
+  final String title;
 
-  MovieModel({
+  const MovieModel({
     required this.adult,
     required this.backdropPath,
     required this.genreIds,
