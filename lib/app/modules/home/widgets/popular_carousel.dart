@@ -37,7 +37,9 @@ class PopularCarousel extends StatelessWidget {
                 shrinkWrap: true,
                 physics: ClampingScrollPhysics(),
                 scrollDirection: Axis.horizontal,
-                itemCount: 5,
+                itemCount: controller.movieListPopular.length >= 7
+                    ? 7
+                    : controller.movieListPopular.length,
                 itemBuilder: (context, index) {
                   final movieList = controller.movieListPopular[index];
                   return Padding(

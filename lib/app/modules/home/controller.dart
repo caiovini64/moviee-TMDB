@@ -4,31 +4,17 @@ import 'package:tmdb_api/app/data/models/tv_show_model.dart';
 import 'package:tmdb_api/app/data/repositories/movie_repository.dart';
 import 'package:tmdb_api/app/data/repositories/tv_show_repository.dart';
 
-class HomeController extends GetxController with StateMixin<List<MovieModel>> {
+class HomeController extends GetxController with StateMixin {
   RxList<MovieModel> _movieListTopRated = <MovieModel>[].obs;
   RxList<MovieModel> _movieListPopular = <MovieModel>[].obs;
-  RxList<TvShowModel> _tvShowListTopRated = <TvShowModel>[].obs;
+  RxList<TvShowModel> _tvShowListPopular = <TvShowModel>[].obs;
 
-  final urlPath = 'https://image.tmdb.org/t/p/original/';
+  final urlPath = 'https://image.tmdb.org/t/p/w500/';
   var screenSize = Get.mediaQuery;
 
   get movieListTopRated => _movieListTopRated;
   get movieListPopular => _movieListPopular;
-  get tvShowListTopRated => _tvShowListTopRated;
-
-  @override
-  void onInit() {
-    loadTopRatedMovies().then((response) {
-      change(response, status: RxStatus.success());
-    }, onError: (error) {
-      change(null, status: RxStatus.error('Erro ao consumir api'));
-    });
-    loadPopularMovies().then(
-        (response) => change(response, status: RxStatus.success()),
-        onError: (error) =>
-            change(null, status: RxStatus.error('Erro ao consumir api')));
-    super.onInit();
-  }
+  get tvShowListPopular => _tvShowListPopular;
 
   Future<RxList<MovieModel>> loadTopRatedMovies() async {
     _movieListTopRated.assignAll(await MovieRepository.getAllTopRated());
@@ -40,8 +26,37 @@ class HomeController extends GetxController with StateMixin<List<MovieModel>> {
     return _movieListPopular;
   }
 
-  Future<RxList<TvShowModel>> loadTopRatedTvShows() async {
-    _tvShowListTopRated.assignAll(await TvShowRepository.getAll());
-    return _tvShowListTopRated;
+  Future<RxList<TvShowModel>> loadPopularTvShows() async {
+    _tvShowListPopular.assignAll(await TvShowRepository.getAll());
+    return _tvShowListPopular;
+  }
+
+  @override
+  void onInit() {
+    loadTopRatedMovies().then((response) {
+      change(
+        response,
+        status: RxStatus.success(),
+      );
+    }, onError: (error) {
+      change(null, status: RxStatus.error('Erro ao consumir api'));
+    });
+    loadPopularMovies().then((response) {
+      change(
+        response,
+        status: RxStatus.success(),
+      );
+    }, onError: (error) {
+      change(null, status: RxStatus.error('Erro ao consumir api'));
+    });
+    loadPopularTvShows().then((response) {
+      change(
+        response,
+        status: RxStatus.success(),
+      );
+    }, onError: (error) {
+      change(null, status: RxStatus.error('Erro ao consumir api'));
+    });
+    super.onInit();
   }
 }

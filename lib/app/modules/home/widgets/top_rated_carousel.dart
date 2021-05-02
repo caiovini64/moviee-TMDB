@@ -16,7 +16,9 @@ class TopRatedCarousel extends StatelessWidget {
         height: Get.height * 0.24,
         child: ListView.builder(
             physics: ClampingScrollPhysics(),
-            itemCount: 5,
+            itemCount: controller.movieListTopRated.length >= 7
+                ? 7
+                : controller.movieListTopRated.length,
             shrinkWrap: true,
             scrollDirection: Axis.horizontal,
             itemBuilder: (context, index) {

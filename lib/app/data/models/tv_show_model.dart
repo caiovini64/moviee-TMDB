@@ -22,7 +22,7 @@ class TvShowModel {
   final int voteCount;
 
   factory TvShowModel.fromJson(Map<String, dynamic> json) => TvShowModel(
-        backdropPath: json["backdrop_path"],
+        backdropPath: json["backdrop_path"] ?? '',
         genreIds: List<int>.from(json["genre_ids"].map((x) => x)),
         id: json["id"],
         name: json["name"],

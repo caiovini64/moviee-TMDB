@@ -4,7 +4,7 @@ import 'package:tmdb_api/app/modules/home/controller.dart';
 import 'package:tmdb_api/app/modules/home/widgets/buttons_bar.dart';
 import 'package:tmdb_api/app/modules/home/widgets/top_rated_carousel.dart';
 import 'package:tmdb_api/app/modules/home/widgets/popular_carousel.dart';
-import 'package:tmdb_api/app/modules/home/widgets/series_carousel.dart';
+import 'package:tmdb_api/app/modules/home/widgets/tv_show_carousel.dart';
 import 'package:tmdb_api/app/theme/app_theme.dart';
 
 class HomePage extends GetView<HomeController> {
@@ -25,7 +25,7 @@ class HomePage extends GetView<HomeController> {
             TopRatedCarousel(),
             ButtonsBar(),
             PopularCarousel(),
-            SeriesCarousel(),
+            TvShowCarousel(),
           ],
         ),
       ),

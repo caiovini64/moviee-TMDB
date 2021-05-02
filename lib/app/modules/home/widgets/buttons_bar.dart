@@ -55,7 +55,7 @@ class ButtonsBar extends StatelessWidget {
               ),
               child: Center(
                 child: Text(
-                  'People',
+                  'Trending',
                   style: AppTheme.to.theme.textTheme.bodyText1,
                 ),
               ),
