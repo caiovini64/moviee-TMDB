@@ -11,33 +11,32 @@ class InitialPage extends GetView<InitialController> {
   final bottomNavController = Get.find<BottomNavController>();
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: AppTheme.to.theme.backgroundColor,
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
+    return Obx(
+      () => Scaffold(
+        backgroundColor: AppTheme.to.theme.backgroundColor,
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+        ),
+        body: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Visibility(
+              visible: bottomNavController.currentIndex == 0,
+              child: HomePage(),
+            ),
+            Visibility(
+              visible: bottomNavController.currentIndex == 1,
+              child: Center(child: Text('2')),
+            ),
+            Visibility(
+              visible: bottomNavController.currentIndex == 2,
+              child: Center(child: Text('3')),
+            ),
+          ],
+        ),
+        bottomNavigationBar: CustomBottomNavBar(),
       ),
-      body: Column(
-        children: [
-          Obx(() => Visibility(
-                visible: bottomNavController.currentIndex == 0,
-                child: HomePage(),
-              )),
-          Obx(() => Visibility(
-                visible: bottomNavController.currentIndex == 1,
-                child: Center(child: Text('2')),
-              )),
-          Obx(() => Visibility(
-                visible: bottomNavController.currentIndex == 2,
-                child: Center(child: Text('3')),
-              )),
-          Obx(() => Visibility(
-                visible: bottomNavController.currentIndex == 3,
-                child: Center(child: Text('4')),
-              )),
-        ],
-      ),
-      bottomNavigationBar: CustomBottomNavBar(),
     );
   }
 }
