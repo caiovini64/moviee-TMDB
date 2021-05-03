@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
-import 'package:tmdb_api/app/modules/home/binding.dart';
-import 'package:tmdb_api/app/modules/home/page.dart';
+import 'package:tmdb_api/app/modules/initial/binding.dart';
+import 'package:tmdb_api/app/modules/initial/page.dart';
 import 'package:tmdb_api/app/modules/splash/binding.dart';
 import 'package:tmdb_api/app/modules/splash/page.dart';
 
@@ -14,9 +14,14 @@ class AppPages {
       binding: SplashBinding(),
     ),
     GetPage(
-      name: Routes.HOME,
-      page: () => HomePage(),
-      binding: HomeBinding(),
-    )
+      name: Routes.INITIAL,
+      page: () => InitialPage(),
+      binding: InitialBinding(),
+    ),
+    // GetPage(
+    //   name: Routes.HOME,
+    //   page: () => HomePage(),
+    //   binding: HomeBinding(),
+    // )
   ];
 }

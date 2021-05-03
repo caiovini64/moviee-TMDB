@@ -10,10 +10,10 @@ class HomeBinding implements Bindings {
   @override
   void dependencies() {
     Get.lazyPut<HomeController>(() => HomeController());
-    Get.lazyPut<AppTheme>(() => AppTheme());
     Get.lazyPut<MovieRepository>(() => MovieRepository());
     Get.lazyPut<MovieProvider>(() => MovieProvider());
     Get.lazyPut<TvShowRepository>(() => TvShowRepository());
     Get.lazyPut<TvShowProvider>(() => TvShowProvider());
+    Get.put(AppTheme());
   }
 }
