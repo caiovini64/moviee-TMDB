@@ -4,6 +4,7 @@ import 'package:tmdb_api/app/global/widgets/bottom_nav/bottom_nav_controller.dar
 import 'package:tmdb_api/app/global/widgets/bottom_nav/custom_bottom_nav_bar.dart';
 import 'package:tmdb_api/app/modules/home/page.dart';
 import 'package:tmdb_api/app/modules/initial/controller.dart';
+import 'package:tmdb_api/app/modules/search/page.dart';
 import 'package:tmdb_api/app/theme/app_theme.dart';
 
 class InitialPage extends GetView<InitialController> {
@@ -27,7 +28,7 @@ class InitialPage extends GetView<InitialController> {
             ),
             Visibility(
               visible: bottomNavController.currentIndex == 1,
-              child: Center(child: Text('2')),
+              child: SearchPage(),
             ),
             Visibility(
               visible: bottomNavController.currentIndex == 2,
