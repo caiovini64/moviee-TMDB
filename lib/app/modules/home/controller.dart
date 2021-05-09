@@ -3,6 +3,7 @@ import 'package:tmdb_api/app/data/models/movie_model.dart';
 import 'package:tmdb_api/app/data/models/tv_show_model.dart';
 import 'package:tmdb_api/app/data/repositories/movie_repository.dart';
 import 'package:tmdb_api/app/data/repositories/tv_show_repository.dart';
+import 'package:tmdb_api/app/routes/app_routes.dart';
 
 class HomeController extends GetxController with StateMixin {
   RxList<MovieModel> _movieListTopRated = <MovieModel>[].obs;
@@ -10,7 +11,6 @@ class HomeController extends GetxController with StateMixin {
   RxList<TvShowModel> _tvShowListPopular = <TvShowModel>[].obs;
 
   final urlPath = 'https://image.tmdb.org/t/p/w500/';
-  var screenSize = Get.mediaQuery;
 
   get movieListTopRated => _movieListTopRated;
   get movieListPopular => _movieListPopular;
@@ -59,4 +59,6 @@ class HomeController extends GetxController with StateMixin {
     });
     super.onInit();
   }
+
+  void goToDetails(movie) => Get.toNamed(Routes.DETAILS, arguments: movie);
 }

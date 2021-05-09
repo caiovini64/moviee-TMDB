@@ -1,4 +1,6 @@
 import 'package:get/get.dart';
+import 'package:tmdb_api/app/modules/details/binding.dart';
+import 'package:tmdb_api/app/modules/details/page.dart';
 import 'package:tmdb_api/app/modules/initial/binding.dart';
 import 'package:tmdb_api/app/modules/initial/page.dart';
 import 'package:tmdb_api/app/modules/splash/binding.dart';
@@ -18,10 +20,11 @@ class AppPages {
       page: () => InitialPage(),
       binding: InitialBinding(),
     ),
-    // GetPage(
-    //   name: Routes.HOME,
-    //   page: () => HomePage(),
-    //   binding: HomeBinding(),
-    // )
+    GetPage(
+      name: Routes.DETAILS,
+      page: () => DetailsPage(),
+      binding: DetailsBinding(),
+      transition: Transition.rightToLeft,
+    ),
   ];
 }
