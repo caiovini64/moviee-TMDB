@@ -28,11 +28,11 @@ class InitialPage extends GetView<InitialController> {
             ),
             Visibility(
               visible: bottomNavController.currentIndex == 1,
-              child: SearchPage(),
+              child: Center(child: Text('3')),
             ),
             Visibility(
               visible: bottomNavController.currentIndex == 2,
-              child: Center(child: Text('3')),
+              child: SearchPage(),
             ),
           ],
         ),

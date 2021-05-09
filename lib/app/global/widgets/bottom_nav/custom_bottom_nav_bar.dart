@@ -23,19 +23,12 @@ class CustomBottomNavBar extends GetView<BottomNavController> {
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            label: 'Search',
-          ),
-          BottomNavigationBarItem(
             icon: Icon(Icons.favorite),
             label: 'Favorites',
           ),
           BottomNavigationBarItem(
-            icon: FaIcon(
-              FontAwesomeIcons.userAlt,
-              size: 16,
-            ),
-            label: 'Profile',
+            icon: Icon(Icons.search),
+            label: 'Search',
           ),
         ],
         onTap: (index) => controller.currentIndex = index,
