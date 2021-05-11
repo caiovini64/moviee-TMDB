@@ -42,4 +42,16 @@ class MovieProvider {
     }
     throw Exception(response.body);
   }
+
+  static Future<Map<String, dynamic>> getDetails(movieId) async {
+    http.Response response =
+        await http.get(Uri.parse('$apiBase/movie/$movieId?api_key=$apiKey'));
+
+    if (response.statusCode != 200) throw Exception();
+    if (response.statusCode == 200) {
+      final json = jsonDecode(response.body);
+      return json;
+    }
+    throw Exception(response.body);
+  }
 }

@@ -1,3 +1,4 @@
+import 'package:tmdb_api/app/data/models/movie_details_model.dart';
 import 'package:tmdb_api/app/data/models/movie_model.dart';
 import 'package:tmdb_api/app/data/providers/movie_provider.dart';
 
@@ -33,5 +34,11 @@ class MovieRepository {
       _list.add(movieElement);
     });
     return _list;
+  }
+
+  static Future<MovieDetailsModel> getDetails(movieId) async {
+    final json = await MovieProvider.getDetails(movieId);
+    final detail = MovieDetailsModel.fromJson(json);
+    return detail;
   }
 }
