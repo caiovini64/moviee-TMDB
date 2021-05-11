@@ -3,8 +3,8 @@ import 'package:get/get.dart';
 import 'package:tmdb_api/app/modules/home/controller.dart';
 import 'package:tmdb_api/app/modules/home/widgets/buttons_bar.dart';
 import 'package:tmdb_api/app/modules/home/widgets/popular_carousel.dart';
+import 'package:tmdb_api/app/modules/home/widgets/upcoming_carousel.dart';
 import 'package:tmdb_api/app/modules/home/widgets/top_rated_carousel.dart';
-import 'package:tmdb_api/app/modules/home/widgets/tv_show_carousel.dart';
 
 class HomePage extends GetView<HomeController> {
   static const route = '/home';
@@ -16,10 +16,10 @@ class HomePage extends GetView<HomeController> {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            TopRatedCarousel(),
+            UpcomingCarousel(),
             ButtonsBar(),
             PopularCarousel(),
-            TvShowCarousel(),
+            TopRatedCarousel(),
           ],
         ),
       ),

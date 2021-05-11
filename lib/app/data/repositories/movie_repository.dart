@@ -23,4 +23,15 @@ class MovieRepository {
     });
     return _list;
   }
+
+  static Future<List<MovieModel>> getAllUpcoming() async {
+    List<MovieModel> _list = <MovieModel>[];
+    Map json = await MovieProvider.getAllUpcoming();
+    final movies = json['results'] as List;
+    movies.forEach((element) {
+      final movieElement = MovieModel.fromJson(element);
+      _list.add(movieElement);
+    });
+    return _list;
+  }
 }

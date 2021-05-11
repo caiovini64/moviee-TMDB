@@ -5,8 +5,7 @@ import 'package:tmdb_api/app/modules/home/controller.dart';
 import 'package:tmdb_api/app/theme/app_theme.dart';
 import 'package:tmdb_api/app/utils/values/constants.dart';
 
-class PopularCarousel extends StatelessWidget {
-  final HomeController controller = Get.find();
+class PopularCarousel extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return controller.obx(

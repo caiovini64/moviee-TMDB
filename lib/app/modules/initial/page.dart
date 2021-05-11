@@ -16,6 +16,8 @@ class InitialPage extends GetView<InitialController> {
       () => Scaffold(
         backgroundColor: AppTheme.to.theme.backgroundColor,
         appBar: AppBar(
+          centerTitle: true,
+          title: Text('Moviee'),
           backgroundColor: Colors.transparent,
           elevation: 0,
         ),
