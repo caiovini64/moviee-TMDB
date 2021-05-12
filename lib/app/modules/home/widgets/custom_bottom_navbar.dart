@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
-import 'package:tmdb_api/app/global/widgets/bottom_nav/bottom_nav_controller.dart';
+import 'package:tmdb_api/app/modules/home/controller.dart';
 import 'package:tmdb_api/app/theme/app_theme.dart';
 
-class CustomBottomNavBar extends GetView<BottomNavController> {
+class CustomBottomNavBar extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return Obx(
@@ -29,13 +28,6 @@ class CustomBottomNavBar extends GetView<BottomNavController> {
           BottomNavigationBarItem(
             icon: Icon(Icons.favorite),
             label: 'Favorites',
-          ),
-          BottomNavigationBarItem(
-            icon: FaIcon(
-              FontAwesomeIcons.userAlt,
-              size: 16,
-            ),
-            label: 'Profile',
           ),
         ],
         onTap: (index) => controller.currentIndex = index,

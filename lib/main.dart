@@ -7,7 +7,7 @@ import 'package:tmdb_api/app/routes/app_routes.dart';
 void main() {
   runApp(GetMaterialApp(
     debugShowCheckedModeBanner: false,
-    initialRoute: Routes.INITIAL,
+    initialRoute: Routes.HOME,
     defaultTransition: Transition.fade,
     initialBinding: SplashBinding(),
     getPages: AppPages.pages,
