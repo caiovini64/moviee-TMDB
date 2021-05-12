@@ -1,16 +1,20 @@
 import 'package:get/get.dart';
 import 'package:tmdb_api/app/data/models/movie_details_model.dart';
+import 'package:tmdb_api/app/data/models/movie_model.dart';
+import 'package:tmdb_api/app/data/repositories/cast_repository.dart';
 import 'package:tmdb_api/app/data/repositories/movie_repository.dart';
 
-class DetailsController extends GetxController
-    with StateMixin<MovieDetailsModel> {
-  int _movieId = Get.arguments;
+class DetailsController extends GetxController with StateMixin {
+  MovieModel _movie = Get.arguments;
   final urlPath = 'https://image.tmdb.org/t/p/w500/';
+
+  MovieModel get movie => _movie;
 
   @override
   void onInit() {
     super.onInit();
-    loadDetails(_movieId);
+    loadDetails(_movie.id);
+    loadCast(_movie.id);
   }
 
   loadDetails(movieId) async {
@@ -18,6 +22,14 @@ class DetailsController extends GetxController
       change(value, status: RxStatus.success());
     }).catchError((error) {
       change(null, status: RxStatus.error('Erro ao carregar detalhes'));
+    });
+  }
+
+  loadCast(movieId) async {
+    await CastRepository.getAllCast(movieId).then((value) {
+      change(value, status: RxStatus.success());
+    }).catchError((error) {
+      change(null, status: RxStatus.error('Erro ao carregar cast'));
     });
   }
 }

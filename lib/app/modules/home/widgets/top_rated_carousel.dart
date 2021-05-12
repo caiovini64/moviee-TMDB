@@ -43,7 +43,7 @@ class TopRatedCarousel extends GetView<InitialController> {
                 itemBuilder: (context, index) {
                   final movie = controller.movieListTopRated[index];
                   return GestureDetector(
-                    onTap: () => controller.goToDetails(movie.id),
+                    onTap: () => controller.goToDetails(movie),
                     child: Padding(
                       padding: const EdgeInsets.only(left: 18),
                       child: ClipRRect(
