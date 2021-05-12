@@ -1,5 +1,7 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:tmdb_api/app/modules/home/controller.dart';
 import 'package:tmdb_api/app/modules/home/pages/initial/page.dart';
 import 'package:tmdb_api/app/modules/home/pages/search/page.dart';
@@ -15,7 +17,17 @@ class HomePage extends GetView<HomeController> {
         backgroundColor: AppTheme.to.theme.backgroundColor,
         appBar: AppBar(
           centerTitle: true,
-          title: Text('Moviee'),
+          title: DefaultTextStyle(
+            style: GoogleFonts.majorMonoDisplay(
+              fontSize: 16,
+              color: AppTheme.to.theme.buttonColor,
+              fontWeight: FontWeight.bold,
+            ),
+            child: AnimatedTextKit(
+              animatedTexts: [WavyAnimatedText('Moviee')],
+            ),
+          ),
+          // title: Text('Moviee'),
           backgroundColor: Colors.transparent,
           elevation: 0,
         ),
