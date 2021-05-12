@@ -41,14 +41,17 @@ class PopularCarousel extends GetView<InitialController> {
                     ? 7
                     : controller.movieListPopular.length,
                 itemBuilder: (context, index) {
-                  final movieList = controller.movieListPopular[index];
-                  return Padding(
-                    padding: const EdgeInsets.only(left: 18),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(10),
-                      child: Image(
-                        image: NetworkImage(
-                            controller.urlPath + movieList.posterPath),
+                  final movie = controller.movieListPopular[index];
+                  return GestureDetector(
+                    onTap: () => controller.goToDetails(movie.id),
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 18),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(10),
+                        child: Image(
+                          image: NetworkImage(
+                              controller.urlPath + movie.posterPath),
+                        ),
                       ),
                     ),
                   );

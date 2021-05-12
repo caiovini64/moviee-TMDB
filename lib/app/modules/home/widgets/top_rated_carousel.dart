@@ -42,13 +42,16 @@ class TopRatedCarousel extends GetView<InitialController> {
                     : controller.movieListTopRated.length,
                 itemBuilder: (context, index) {
                   final movie = controller.movieListTopRated[index];
-                  return Padding(
-                    padding: const EdgeInsets.only(left: 18),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(10),
-                      child: Image(
-                        image:
-                            NetworkImage(controller.urlPath + movie.posterPath),
+                  return GestureDetector(
+                    onTap: () => controller.goToDetails(movie.id),
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 18),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(10),
+                        child: Image(
+                          image: NetworkImage(
+                              controller.urlPath + movie.posterPath),
+                        ),
                       ),
                     ),
                   );

@@ -10,9 +10,9 @@ class InitialController extends GetxController with StateMixin {
 
   final urlPath = 'https://image.tmdb.org/t/p/w500/';
 
-  get movieListTopRated => _movieListTopRated;
-  get movieListPopular => _movieListPopular;
-  get movieListUpcoming => _movieListUpcoming;
+  List<MovieModel> get movieListTopRated => _movieListTopRated;
+  List<MovieModel> get movieListPopular => _movieListPopular;
+  List<MovieModel> get movieListUpcoming => _movieListUpcoming;
 
   Future<RxList<MovieModel>> loadTopRatedMovies() async {
     _movieListTopRated.assignAll(await MovieRepository.getAllTopRated());

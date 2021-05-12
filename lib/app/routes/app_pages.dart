@@ -24,7 +24,6 @@ class AppPages {
       name: Routes.DETAILS,
       page: () => DetailsPage(),
       binding: DetailsBinding(),
-      transition: Transition.rightToLeft,
     ),
   ];
 }

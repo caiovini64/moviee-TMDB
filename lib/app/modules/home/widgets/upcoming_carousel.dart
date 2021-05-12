@@ -22,7 +22,7 @@ class UpcomingCarousel extends GetView<InitialController> {
             itemBuilder: (context, index) {
               final movie = controller.movieListUpcoming[index];
               return GestureDetector(
-                onTap: () => controller.goToDetails(movie),
+                onTap: () => controller.goToDetails(movie.id),
                 child: Padding(
                   padding: const EdgeInsets.only(left: 18.0, bottom: 30),
                   child: ClipRRect(
