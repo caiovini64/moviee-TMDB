@@ -29,8 +29,11 @@ class InitialController extends GetxController with StateMixin {
     return _movieListUpcoming;
   }
 
+  void a() => print(Get.deviceLocale);
+
   @override
   void onInit() {
+    a();
     loadTopRatedMovies().then((response) {
       change(
         response,
