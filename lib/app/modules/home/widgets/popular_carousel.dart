@@ -18,11 +18,11 @@ class PopularCarousel extends GetView<InitialController> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  'MOST POPULAR',
+                  'MOST POPULAR'.tr,
                   style: AppTheme.to.theme.textTheme.headline1,
                 ),
                 TextButton(
-                  child: Text('Show all'),
+                  child: Text('Show all'.tr),
                   onPressed: () {},
                 ),
               ],
