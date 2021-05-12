@@ -16,8 +16,13 @@ class AppTheme extends GetxController {
         fontSize: 16,
         fontWeight: FontWeight.bold,
       ),
+      headline2: TextStyle(
+        color: secondaryDarkColor,
+        fontSize: 18,
+        fontWeight: FontWeight.bold,
+      ),
       bodyText1: TextStyle(
-        color: secondaryDarkColor.withOpacity(0.7),
+        color: secondaryDarkColor.withOpacity(0.5),
         fontSize: 14,
         fontWeight: FontWeight.normal,
       ),
@@ -29,6 +34,6 @@ class AppTheme extends GetxController {
     ),
   ).obs;
 
-  get theme => themeData.value;
+  ThemeData get theme => themeData.value;
 }
 //
