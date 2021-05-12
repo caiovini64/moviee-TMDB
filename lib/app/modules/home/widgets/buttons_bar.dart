@@ -23,7 +23,7 @@ class ButtonsBar extends StatelessWidget {
               ),
               child: Center(
                 child: Text(
-                  'Movies',
+                  'Now Playing'.tr,
                   style: AppTheme.to.theme.textTheme.bodyText1,
                 ),
               ),
@@ -37,7 +37,7 @@ class ButtonsBar extends StatelessWidget {
               ),
               child: Center(
                 child: Text(
-                  'TV Shows',
+                  'Trending'.tr,
                   style: AppTheme.to.theme.textTheme.bodyText1,
                 ),
               ),
@@ -55,7 +55,7 @@ class ButtonsBar extends StatelessWidget {
               ),
               child: Center(
                 child: Text(
-                  'Trending',
+                  'Discover'.tr,
                   style: AppTheme.to.theme.textTheme.bodyText1,
                 ),
               ),

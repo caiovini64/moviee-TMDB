@@ -18,11 +18,11 @@ class TopRatedCarousel extends GetView<InitialController> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                'TOP RATED',
+                'TOP RATED'.tr,
                 style: AppTheme.to.theme.textTheme.headline1,
               ),
               TextButton(
-                child: Text('Show all'),
+                child: Text('Show all'.tr),
                 onPressed: () {},
               ),
             ],
