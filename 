@@ -1,0 +1,46 @@
+Merge branch 'develop'
+
+# Conflicts:
+#	lib/app/modules/details/widgets/info_details.dart
+#	lib/app/modules/home/widgets/custom_bottom_navbar.dart
+#	lib/app/modules/initial/page.dart
+#
+# It looks like you may be committing a merge.
+# If this is not correct, please run
+#	git update-ref -d MERGE_HEAD
+# and try again.
+
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch main
+# Your branch is up to date with 'origin/main'.
+#
+# All conflicts fixed but you are still merging.
+#
+# Changes to be committed:
+#	deleted:    lib/app/global/widgets/bottom_nav/bottom_nav_controller.dart
+#	modified:   lib/app/modules/details/controller.dart
+#	modified:   lib/app/modules/details/widgets/info_details.dart
+#	modified:   lib/app/modules/home/binding.dart
+#	modified:   lib/app/modules/home/controller.dart
+#	modified:   lib/app/modules/home/page.dart
+#	new file:   lib/app/modules/home/pages/initial/binding.dart
+#	new file:   lib/app/modules/home/pages/initial/controller.dart
+#	new file:   lib/app/modules/home/pages/initial/page.dart
+#	renamed:    lib/app/modules/search/binding.dart -> lib/app/modules/home/pages/search/binding.dart
+#	renamed:    lib/app/modules/search/controller.dart -> lib/app/modules/home/pages/search/controller.dart
+#	renamed:    lib/app/modules/search/page.dart -> lib/app/modules/home/pages/search/page.dart
+#	renamed:    lib/app/modules/search/widgets/search_bar.dart -> lib/app/modules/home/pages/search/widgets/search_bar.dart
+#	renamed:    lib/app/global/widgets/bottom_nav/custom_bottom_nav_bar.dart -> lib/app/modules/home/widgets/custom_bottom_navbar.dart
+#	modified:   lib/app/modules/home/widgets/popular_carousel.dart
+#	modified:   lib/app/modules/home/widgets/top_rated_carousel.dart
+#	modified:   lib/app/modules/home/widgets/upcoming_carousel.dart
+#	deleted:    lib/app/modules/initial/binding.dart
+#	deleted:    lib/app/modules/initial/controller.dart
+#	modified:   lib/app/routes/app_pages.dart
+#	modified:   lib/app/routes/app_routes.dart
+#	modified:   lib/app/theme/app_theme.dart
+#	modified:   lib/main.dart
+#
