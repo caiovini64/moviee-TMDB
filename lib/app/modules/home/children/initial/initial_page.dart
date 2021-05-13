@@ -16,10 +16,10 @@ class InitialPage extends GetView<TopRatedController> {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            UpcomingCarousel(),
+            Semantics(label: 'Upcoming Movies', child: UpcomingCarousel()),
             ButtonsBar(),
-            PopularCarousel(),
-            TopRatedCarousel(),
+            Semantics(label: 'Popular Movies', child: PopularCarousel()),
+            Semantics(label: 'Top Rated Movies', child: TopRatedCarousel()),
           ],
         ),
       ),
