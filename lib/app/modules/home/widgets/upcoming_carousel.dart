@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shimmer/shimmer.dart';
-import 'package:tmdb_api/app/modules/home/children/initial/controllers/top_rated_controller.dart';
+import 'package:tmdb_api/app/modules/home/children/initial/controllers/upcoming_controller.dart';
 import 'package:tmdb_api/app/utils/values/constants.dart';
 import '../../../theme/app_theme.dart';
 
-class UpcomingCarousel extends GetView<TopRatedController> {
+class UpcomingCarousel extends GetView<UpcomingController> {
   @override
   Widget build(BuildContext context) {
     //TODO: Tratar erro

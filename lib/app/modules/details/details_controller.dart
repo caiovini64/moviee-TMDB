@@ -1,5 +1,4 @@
 import 'package:get/get.dart';
-import 'package:tmdb_api/app/data/models/movie_details_model.dart';
 import 'package:tmdb_api/app/data/models/movie_model.dart';
 import 'package:tmdb_api/app/data/repositories/cast_repository.dart';
 import 'package:tmdb_api/app/data/repositories/movie_repository.dart';

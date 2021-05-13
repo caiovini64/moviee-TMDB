@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shimmer/shimmer.dart';
-import 'package:tmdb_api/app/modules/home/children/initial/controllers/top_rated_controller.dart';
+import 'package:tmdb_api/app/modules/home/children/initial/controllers/popular_controller.dart';
 import 'package:tmdb_api/app/theme/app_theme.dart';
 import 'package:tmdb_api/app/utils/values/constants.dart';
 
-class PopularCarousel extends GetView<TopRatedController> {
+class PopularCarousel extends GetView<PopularController> {
   @override
   Widget build(BuildContext context) {
     return controller.obx(
