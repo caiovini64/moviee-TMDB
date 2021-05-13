@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:tmdb_api/app/modules/details/controller.dart';
+import 'package:tmdb_api/app/modules/details/details_controller.dart';
 import 'package:tmdb_api/app/modules/details/widgets/cast.dart';
 import 'package:tmdb_api/app/modules/details/widgets/info_details.dart';
 import 'package:tmdb_api/app/theme/app_theme.dart';

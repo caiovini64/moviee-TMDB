@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:tmdb_api/app/modules/details/controller.dart';
+import 'package:tmdb_api/app/modules/details/details_controller.dart';
 import 'package:tmdb_api/app/theme/app_theme.dart';
 
 class InfoDetails extends GetView<DetailsController> {

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:tmdb_api/app/modules/splash/controller.dart';
+import 'package:tmdb_api/app/modules/splash/splash_controller.dart';
 
 class SplashPage extends GetView<SplashController> {
   static const route = '/';

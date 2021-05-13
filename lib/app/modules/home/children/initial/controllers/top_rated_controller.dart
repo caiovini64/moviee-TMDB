@@ -3,7 +3,7 @@ import 'package:tmdb_api/app/data/models/movie_model.dart';
 import 'package:tmdb_api/app/data/repositories/movie_repository.dart';
 import 'package:tmdb_api/app/routes/app_routes.dart';
 
-class InitialController extends GetxController with StateMixin {
+class TopRatedController extends GetxController with StateMixin {
   RxList<MovieModel> _movieListTopRated = <MovieModel>[].obs;
   RxList<MovieModel> _movieListPopular = <MovieModel>[].obs;
   RxList<MovieModel> _movieListUpcoming = <MovieModel>[].obs;

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:tmdb_api/app/modules/home/controller.dart';
+import 'package:tmdb_api/app/modules/home/controllers/home_controller.dart';
 import 'package:tmdb_api/app/theme/app_theme.dart';
 
 class CustomBottomNavBar extends GetView<HomeController> {

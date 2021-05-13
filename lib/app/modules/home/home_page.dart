@@ -2,9 +2,9 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:tmdb_api/app/modules/home/controller.dart';
-import 'package:tmdb_api/app/modules/home/pages/initial/page.dart';
-import 'package:tmdb_api/app/modules/home/pages/search/page.dart';
+import 'package:tmdb_api/app/modules/home/children/initial/initial_page.dart';
+import 'package:tmdb_api/app/modules/home/children/search/search_page.dart';
+import 'package:tmdb_api/app/modules/home/controllers/home_controller.dart';
 import 'package:tmdb_api/app/modules/home/widgets/custom_bottom_navbar.dart';
 import 'package:tmdb_api/app/theme/app_theme.dart';
 
@@ -40,11 +40,11 @@ class HomePage extends GetView<HomeController> {
             ),
             Visibility(
               visible: controller.currentIndex == 1,
-              child: SearchPage(),
+              child: Center(child: Text('3')),
             ),
             Visibility(
               visible: controller.currentIndex == 2,
-              child: Center(child: Text('3')),
+              child: SearchPage(),
             ),
           ],
         ),
