@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:tmdb_api/app/modules/details/controllers/cast_controller.dart';
 import 'package:tmdb_api/app/theme/app_theme.dart';
 
-class Cast extends StatelessWidget {
+class Cast extends GetView<CastController> {
   @override
   Widget build(BuildContext context) {
     return Column(

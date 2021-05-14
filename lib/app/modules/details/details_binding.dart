@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:tmdb_api/app/modules/details/details_controller.dart';
+import 'package:tmdb_api/app/modules/details/controllers/details_controller.dart';
 import 'package:tmdb_api/app/theme/app_theme.dart';
 
 class DetailsBinding implements Bindings {
