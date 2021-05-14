@@ -15,10 +15,10 @@ class Cast extends GetView<CastController> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    'CAST',
+                    'CAST'.tr,
                     style: AppTheme.to.theme.textTheme.headline1,
                   ),
-                  TextButton(onPressed: () {}, child: Text('Show all')),
+                  TextButton(onPressed: () {}, child: Text('Show all'.tr)),
                 ],
               ),
             ),
