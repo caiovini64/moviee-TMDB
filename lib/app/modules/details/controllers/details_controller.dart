@@ -13,7 +13,6 @@ class DetailsController extends GetxController with StateMixin {
   void onInit() {
     super.onInit();
     loadDetails(_movie.id);
-    loadCast(_movie.id);
   }
 
   loadDetails(movieId) async {
@@ -21,14 +20,6 @@ class DetailsController extends GetxController with StateMixin {
       change(value, status: RxStatus.success());
     }).catchError((error) {
       change(null, status: RxStatus.error('Erro ao carregar detalhes'));
-    });
-  }
-
-  loadCast(movieId) async {
-    await CastRepository.getAllCast(movieId).then((value) {
-      change(value, status: RxStatus.success());
-    }).catchError((error) {
-      change(null, status: RxStatus.error('Erro ao carregar cast'));
     });
   }
 }
