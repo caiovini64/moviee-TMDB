@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:get/get.dart';
 import 'package:tmdb_api/app/data/models/movie_model.dart';
 import 'package:tmdb_api/app/data/repositories/movie_repository.dart';
@@ -21,6 +23,7 @@ class UpcomingController extends GetxController
   @override
   void onInit() {
     super.onInit();
+    print(Get.locale);
     loadUpcomingMovies().then((response) {
       change(
         response,

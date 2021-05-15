@@ -8,7 +8,6 @@ class DetailsBinding implements Bindings {
   void dependencies() {
     Get.lazyPut<DetailsController>(() => DetailsController());
     Get.lazyPut<CastController>(() => CastController());
-
     Get.put(AppTheme());
   }
 }
