@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shimmer/shimmer.dart';
-import 'package:tmdb_api/app/modules/details/controllers/current_movie_controller.dart';
 import 'package:tmdb_api/app/modules/details/controllers/recommendations_controller.dart';
 import 'package:tmdb_api/app/theme/app_theme.dart';
 import 'package:tmdb_api/app/utils/values/constants.dart';
@@ -39,9 +38,8 @@ class RecommendationsMovies extends GetView<RecommendationsController> {
                   final movie = state[index];
                   return GestureDetector(
                     onTap: () {
-                      print('click');
-                      controller.updateCurrentMovie(movie.id);
-                      // controller.goToDetails(movie);
+                      controller.updateCurrentMovie(movie);
+                      Navigator.pushNamed(context, '/details');
                     },
                     child: Padding(
                       padding: const EdgeInsets.only(left: 18),
