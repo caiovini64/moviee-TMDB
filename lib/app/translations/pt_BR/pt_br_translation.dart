@@ -5,5 +5,6 @@ final Map<String, String> ptBR = {
   'Now Playing': 'Em Cartaz',
   'Trending': 'Em Alta',
   'Discover': 'Descubra',
-  'CAST': 'ELENCO'
+  'CAST': 'ELENCO',
+  'RECOMMENDATIONS': 'RECOMENDADOS',
 };

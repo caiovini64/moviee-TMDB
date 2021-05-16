@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:tmdb_api/app/modules/details/controllers/details_controller.dart';
 import 'package:tmdb_api/app/modules/details/widgets/cast.dart';
 import 'package:tmdb_api/app/modules/details/widgets/info_details.dart';
+import 'package:tmdb_api/app/modules/details/widgets/recommendations_movies.dart';
 import 'package:tmdb_api/app/theme/app_theme.dart';
 
 class DetailsPage extends GetView<DetailsController> {
@@ -21,6 +22,7 @@ class DetailsPage extends GetView<DetailsController> {
           children: [
             InfoDetails(),
             Cast(),
+            RecommendationsMovies(),
           ],
         ),
       ),

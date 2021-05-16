@@ -41,4 +41,15 @@ class MovieRepository {
     final detail = MovieDetailsModel.fromJson(json);
     return detail;
   }
+
+  static Future<List<MovieModel>> getRecommendations(movieId) async {
+    List<MovieModel> _list = <MovieModel>[];
+    Map json = await MovieService.getRecommendations(movieId);
+    final movies = json['results'] as List;
+    movies.forEach((element) {
+      final movieElement = MovieModel.fromJson(element);
+      _list.add(movieElement);
+    });
+    return _list;
+  }
 }

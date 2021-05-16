@@ -9,11 +9,11 @@ import 'package:tmdb_api/app/theme/app_theme.dart';
 class InitialBinding implements Bindings {
   @override
   void dependencies() {
-    Get.lazyPut<TopRatedController>(() => TopRatedController());
-    Get.lazyPut<PopularController>(() => PopularController());
-    Get.lazyPut<UpcomingController>(() => UpcomingController());
-    Get.lazyPut<MovieRepository>(() => MovieRepository());
-    Get.lazyPut<MovieService>(() => MovieService());
+    Get.put(TopRatedController(), permanent: true);
+    Get.put(PopularController(), permanent: true);
+    Get.put(UpcomingController(), permanent: true);
+    Get.put(MovieRepository(), permanent: true);
+    Get.put(MovieService(), permanent: true);
     Get.put(AppTheme());
   }
 }

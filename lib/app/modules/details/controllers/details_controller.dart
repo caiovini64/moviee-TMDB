@@ -8,7 +8,8 @@ class DetailsController extends GetxController with StateMixin {
 
   MovieModel get movie => _movie;
 
-  @override
+  updateCurrentMovie(movie) => _movie = movie.value;
+
   void onInit() {
     super.onInit();
     loadDetails(_movie.id);
