@@ -14,16 +14,19 @@ class AppPages {
       name: Routes.SPLASH,
       page: () => SplashPage(),
       binding: SplashBinding(),
+      transition: Transition.fadeIn,
     ),
     GetPage(
       name: Routes.HOME,
       page: () => HomePage(),
       binding: HomeBinding(),
+      transition: Transition.leftToRight,
     ),
     GetPage(
       name: Routes.DETAILS,
       page: () => DetailsPage(),
       binding: DetailsBinding(),
+      transition: Transition.rightToLeft,
     ),
   ];
 }
