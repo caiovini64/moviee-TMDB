@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
-import 'package:tmdb_api/app/utils/values/api_base.dart';
+import 'package:tmdb_api/app/utils/network/api_base.dart';
 
 class CastService {
   static Future<Map<String, dynamic>> getAllCredits(movieId) async {
