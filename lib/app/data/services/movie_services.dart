@@ -1,69 +1,29 @@
-import 'dart:convert';
-
-import 'package:http/http.dart' as http;
-import 'package:tmdb_api/app/utils/localization.dart';
-import 'package:tmdb_api/app/utils/values/api_base.dart';
+import 'package:tmdb_api/app/utils/network/http_client.dart';
 
 class MovieService {
-  //TODO: Pesquisar melhores maneiras de tratar excessão
-
-  static Future<Map<String, dynamic>> getAllTopRated() async {
-    http.Response response = await http.get(Uri.parse(
-        '$apiBase/movie/top_rated?api_key=$apiKey&language=${Localization.locale()}'));
-
-    if (response.statusCode != 200) throw Exception();
-
-    if (response.statusCode == 200) {
-      final json = jsonDecode(response.body);
-      return json;
-    }
-    throw Exception(response.body);
+   HttpClient client = HttpClient();
+  Future<Map<String, dynamic>> getAllTopRated() async {
+    final response = await client.get('/movie/top_rated');
+    return response;
   }
 
-  static Future<Map<String, dynamic>> getAllPopular() async {
-    http.Response response = await http.get(Uri.parse(
-        '$apiBase/movie/popular?api_key=$apiKey&language=${Localization.locale()}'));
-
-    if (response.statusCode != 200) throw Exception();
-    if (response.statusCode == 200) {
-      final json = jsonDecode(response.body);
-      return json;
-    }
-    throw Exception(response.body);
+  Future<Map<String, dynamic>> getAllPopular() async {
+    final response = await client.get('/movie/popular');
+    return response;
   }
 
-  static Future<Map<String, dynamic>> getAllUpcoming() async {
-    http.Response response = await http.get(Uri.parse(
-        '$apiBase/movie/upcoming?api_key=$apiKey&language=${Localization.locale()}'));
-
-    if (response.statusCode != 200) throw Exception();
-    if (response.statusCode == 200) {
-      final json = jsonDecode(response.body);
-      return json;
-    }
-    throw Exception(response.body);
+  Future<Map<String, dynamic>> getAllUpcoming() async {
+    final response = await client.get('/movie/upcoming');
+    return response;
   }
 
-  static Future<Map<String, dynamic>> getDetails(movieId) async {
-    http.Response response = await http.get(Uri.parse(
-        '$apiBase/movie/$movieId?api_key=$apiKey&language=${Localization.locale()}'));
-
-    if (response.statusCode != 200) throw Exception();
-    if (response.statusCode == 200) {
-      final json = jsonDecode(response.body);
-      return json;
-    }
-    throw Exception(response.body);
+  Future<Map<String, dynamic>> getDetails(movieId) async {
+    final response = await client.get('/movie/$movieId');
+    return response;
   }
 
-  static Future<Map<String, dynamic>> getRecommendations(movieId) async {
-    http.Response response = await http.get(Uri.parse(
-        '$apiBase/movie/$movieId/recommendations?api_key=$apiKey&language=${Localization.locale()}'));
-    if (response.statusCode != 200) throw Exception();
-    if (response.statusCode == 200) {
-      final json = jsonDecode(response.body);
-      return json;
-    }
-    throw Exception(response.body);
+  Future<Map<String, dynamic>> getRecommendations(movieId) async {
+    final response = await client.get('/movie/$movieId/recommendations');
+    return response;
   }
 }
