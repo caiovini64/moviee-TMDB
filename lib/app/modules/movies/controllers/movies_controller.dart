@@ -16,8 +16,24 @@ class MoviesController extends GetxController with StateMixin {
     loadData(movieArgument);
   }
 
-  void loadNowPlaying() async {
+  loadNowPlaying() async {
     await repository.getNowPlaying().then((value) {
+      change(value, status: RxStatus.success());
+    }).catchError((error) {
+      change(null, status: RxStatus.error('Erro ao carregar filmes'));
+    });
+  }
+
+  loadUpcoming() async {
+    await repository.getAllUpcoming().then((value) {
+      change(value, status: RxStatus.success());
+    }).catchError((error) {
+      change(null, status: RxStatus.error('Erro ao carregar filmes'));
+    });
+  }
+
+  loadTopRated() async {
+    await repository.getAllTopRated().then((value) {
       change(value, status: RxStatus.success());
     }).catchError((error) {
       change(null, status: RxStatus.error('Erro ao carregar filmes'));
@@ -27,10 +43,10 @@ class MoviesController extends GetxController with StateMixin {
   loadData(argument) {
     if (argument == 'Now Playing') {
       loadNowPlaying();
-    } else if (argument == 'Trending') {
-      print('trend');
+    } else if (argument == 'Upcoming') {
+      loadUpcoming();
     } else {
-      print('discover');
+      loadTopRated();
     }
   }
 }

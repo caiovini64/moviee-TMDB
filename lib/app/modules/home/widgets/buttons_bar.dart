@@ -37,7 +37,7 @@ class ButtonsBar extends GetView<HomeController> {
             VerticalDivider(width: 1),
             GestureDetector(
               onTap: () {
-                controller.goToMovies('Trending');
+                controller.goToMovies('Upcoming');
               },
               child: Container(
                 height: Get.height * 0.07,
@@ -47,7 +47,7 @@ class ButtonsBar extends GetView<HomeController> {
                 ),
                 child: Center(
                   child: Text(
-                    'Trending'.tr,
+                    'Upcoming'.tr,
                     style: AppTheme.to.theme.textTheme.bodyText1,
                   ),
                 ),
@@ -56,7 +56,7 @@ class ButtonsBar extends GetView<HomeController> {
             VerticalDivider(width: 1),
             GestureDetector(
               onTap: () {
-                controller.goToMovies('Discover');
+                controller.goToMovies('Top Rated');
               },
               child: Container(
                 width: Get.width * 0.3,
@@ -70,7 +70,7 @@ class ButtonsBar extends GetView<HomeController> {
                 ),
                 child: Center(
                   child: Text(
-                    'Discover'.tr,
+                    'Top Rated'.tr,
                     style: AppTheme.to.theme.textTheme.bodyText1,
                   ),
                 ),
