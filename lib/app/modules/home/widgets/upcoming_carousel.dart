@@ -14,13 +14,11 @@ class UpcomingCarousel extends GetView<UpcomingController> {
         height: Get.height * 0.24,
         child: ListView.builder(
             physics: ClampingScrollPhysics(),
-            itemCount: controller.movieListUpcoming.length >= 7
-                ? 7
-                : controller.movieListUpcoming.length,
+            itemCount: state.length >= 7 ? 7 : state.length,
             shrinkWrap: true,
             scrollDirection: Axis.horizontal,
             itemBuilder: (context, index) {
-              final movie = controller.movieListUpcoming[index];
+              final movie = state[index];
               return GestureDetector(
                 onTap: () => controller.goToDetails(movie),
                 child: Padding(
