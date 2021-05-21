@@ -5,6 +5,9 @@ import 'package:tmdb_api/app/routes/app_routes.dart';
 
 class PopularController extends GetxController
     with StateMixin<RxList<MovieModel>> {
+  final MovieRepository movieRepository;
+  PopularController(this.movieRepository);
+
   RxList<MovieModel> _movieListPopular = <MovieModel>[].obs;
 
   List<MovieModel> get movieListPopular => _movieListPopular;
@@ -14,7 +17,7 @@ class PopularController extends GetxController
   void goToDetails(movie) => Get.toNamed(Routes.DETAILS, arguments: movie);
 
   Future<RxList<MovieModel>> loadPopularMovies() async {
-    _movieListPopular.assignAll(await MovieRepository.getAllPopular());
+    _movieListPopular.assignAll(await movieRepository.getAllPopular());
     return _movieListPopular;
   }
 

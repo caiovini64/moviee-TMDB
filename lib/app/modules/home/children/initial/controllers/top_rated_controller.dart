@@ -5,16 +5,17 @@ import 'package:tmdb_api/app/routes/app_routes.dart';
 
 class TopRatedController extends GetxController
     with StateMixin<RxList<MovieModel>> {
+  final MovieRepository movieRepository;
   RxList<MovieModel> _movieListTopRated = <MovieModel>[].obs;
-
   List<MovieModel> get movieListTopRated => _movieListTopRated;
-
   final urlPath = 'https://image.tmdb.org/t/p/w500/';
+
+  TopRatedController(this.movieRepository);
 
   void goToDetails(movie) => Get.toNamed(Routes.DETAILS, arguments: movie);
 
   Future<RxList<MovieModel>> loadTopRatedMovies() async {
-    _movieListTopRated.assignAll(await MovieRepository.getAllTopRated());
+    _movieListTopRated.assignAll(await movieRepository.getAllTopRated());
     return _movieListTopRated;
   }
 
