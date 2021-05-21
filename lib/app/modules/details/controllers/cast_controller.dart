@@ -19,6 +19,7 @@ class CastController extends GetxController with StateMixin<List<CastModel>> {
     await castRepository.getAllCast(movieId).then((value) {
       change(value, status: RxStatus.success());
     }).catchError((error) {
+      //TODO: Passar textos para ingles
       change(null, status: RxStatus.error('Erro ao carregar cast'));
     });
   }

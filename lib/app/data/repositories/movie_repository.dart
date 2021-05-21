@@ -39,6 +39,17 @@ class MovieRepository {
     return _list;
   }
 
+  Future<List<MovieModel>> getNowPlaying() async {
+    List<MovieModel> _list = <MovieModel>[];
+    Map json = await movieService.getNowPlaying();
+    final movies = json['results'] as List;
+    movies.forEach((element) {
+      final movieElement = MovieModel.fromJson(element);
+      _list.add(movieElement);
+    });
+    return _list;
+  }
+
   Future<MovieDetailsModel> getDetails(movieId) async {
     final json = await movieService.getDetails(movieId);
     final detail = MovieDetailsModel.fromJson(json);

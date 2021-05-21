@@ -18,6 +18,11 @@ class MovieService {
     return response;
   }
 
+  Future<Map<String, dynamic>> getNowPlaying() async {
+    final response = await client.get('/movie/now_playing');
+    return response;
+  }
+
   Future<Map<String, dynamic>> getDetails(movieId) async {
     final response = await client.get('/movie/$movieId');
     return response;
