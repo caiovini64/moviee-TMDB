@@ -36,9 +36,11 @@ class PopularCarousel extends GetView<PopularController> {
                 shrinkWrap: true,
                 physics: ClampingScrollPhysics(),
                 scrollDirection: Axis.horizontal,
-                itemCount: state!.length >= 7 ? 7 : state.length,
+                itemCount: controller.movieListPopular.length >= 7
+                    ? 7
+                    : controller.movieListPopular.length,
                 itemBuilder: (context, index) {
-                  final movie = state[index];
+                  final movie = controller.movieListPopular[index];
                   return GestureDetector(
                     onTap: () => controller.goToDetails(movie),
                     child: Padding(

@@ -36,9 +36,11 @@ class TopRatedCarousel extends GetView<TopRatedController> {
                 shrinkWrap: true,
                 physics: ClampingScrollPhysics(),
                 scrollDirection: Axis.horizontal,
-                itemCount: state.length >= 7 ? 7 : controller.state.length,
+                itemCount: controller.movieListTopRated.length >= 7
+                    ? 7
+                    : controller.movieListTopRated.length,
                 itemBuilder: (context, index) {
-                  final movie = controller.state[index];
+                  final movie = controller.movieListTopRated[index];
                   return GestureDetector(
                     onTap: () => controller.goToDetails(movie),
                     child: Padding(

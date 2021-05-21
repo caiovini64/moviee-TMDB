@@ -18,10 +18,8 @@ class PopularController extends GetxController
 
   loadPopularMovies() async {
     await movieRepository.getAllPopular().then((response) {
-      change(
-        response,
-        status: RxStatus.success(),
-      );
+      change(response, status: RxStatus.success());
+      _movieListPopular.assignAll(response);
     }, onError: (error) {
       change(null, status: RxStatus.error('Erro ao consumir api'));
     });

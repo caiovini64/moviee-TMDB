@@ -5,6 +5,8 @@ import 'package:tmdb_api/app/routes/app_routes.dart';
 
 class TopRatedController extends GetxController with StateMixin {
   final MovieRepository movieRepository;
+  RxList<MovieModel> _movieListTopRated = <MovieModel>[].obs;
+  List<MovieModel> get movieListTopRated => _movieListTopRated;
   final urlPath = 'https://image.tmdb.org/t/p/w500/';
 
   TopRatedController(this.movieRepository);
@@ -13,10 +15,8 @@ class TopRatedController extends GetxController with StateMixin {
 
   loadTopRatedMovies() async {
     await movieRepository.getAllTopRated().then((response) {
-      change(
-        response,
-        status: RxStatus.success(),
-      );
+      change(response, status: RxStatus.success());
+      _movieListTopRated.assignAll(response);
     }, onError: (error) {
       change(null, status: RxStatus.error('Erro ao consumir api'));
     });
