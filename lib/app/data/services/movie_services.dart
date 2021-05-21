@@ -1,7 +1,8 @@
 import 'package:tmdb_api/app/utils/network/http_client.dart';
 
 class MovieService {
-   HttpClient client = HttpClient();
+  final client;
+  MovieService({required this.client});
   Future<Map<String, dynamic>> getAllTopRated() async {
     final response = await client.get('/movie/top_rated');
     return response;

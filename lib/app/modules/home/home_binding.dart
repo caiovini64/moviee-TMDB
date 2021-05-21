@@ -6,17 +6,20 @@ import 'package:tmdb_api/app/modules/home/children/initial/controllers/top_rated
 import 'package:tmdb_api/app/modules/home/children/initial/controllers/upcoming_controller.dart';
 import 'package:tmdb_api/app/modules/home/controllers/home_controller.dart';
 import 'package:tmdb_api/app/theme/app_theme.dart';
+import 'package:tmdb_api/app/utils/network/http_client.dart';
 
 class HomeBinding implements Bindings {
+  final HttpClient httpClient = HttpClient();
+
   @override
   void dependencies() {
     Get.lazyPut<HomeController>(() => HomeController());
-    Get.lazyPut<TopRatedController>(
-        () => TopRatedController(MovieRepository(MovieService())));
-    Get.lazyPut<PopularController>(
-        () => PopularController(MovieRepository(MovieService())));
-    Get.lazyPut<UpcomingController>(
-        () => UpcomingController(MovieRepository(MovieService())));
+    Get.lazyPut<TopRatedController>(() =>
+        TopRatedController(MovieRepository(MovieService(client: httpClient))));
+    Get.lazyPut<PopularController>(() =>
+        PopularController(MovieRepository(MovieService(client: httpClient))));
+    Get.lazyPut<UpcomingController>(() =>
+        UpcomingController(MovieRepository(MovieService(client: httpClient))));
     Get.put(AppTheme());
   }
 }
