@@ -22,7 +22,7 @@ class TopRatedCarousel extends GetView<TopRatedController> {
               ),
               TextButton(
                 child: Text('Show all'.tr),
-                onPressed: () {},
+                onPressed: () => controller.goToMovies('Top Rated'),
               ),
             ],
           ),

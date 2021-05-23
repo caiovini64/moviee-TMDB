@@ -6,6 +6,9 @@ import 'package:tmdb_api/app/modules/details/controllers/details_controller.dart
 
 class RecommendationsController extends GetxController
     with StateMixin<List<MovieModel>> {
+  final MovieRepository movieRepository;
+  RecommendationsController(this.movieRepository);
+
   final castController = Get.find<CastController>();
   final detailsController = Get.find<DetailsController>();
   MovieModel _movie = Get.arguments;
@@ -26,7 +29,7 @@ class RecommendationsController extends GetxController
   }
 
   loadSimilars(movieId) async {
-    await MovieRepository.getRecommendations(movieId).then((value) {
+    await movieRepository.getRecommendations(movieId).then((value) {
       change(value, status: RxStatus.success());
     }).catchError((error) {
       change(null, status: RxStatus.error('Erro ao carregar filmes similares'));
