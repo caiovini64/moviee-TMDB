@@ -9,4 +9,5 @@ final Map<String, String> ptBR = {
   'RECOMMENDATIONS': 'RECOMENDADOS',
   'Upcoming': 'Lançamentos',
   'Top Rated': 'Mais Votados',
+  'Most Popular': 'Mais Populares',
 };

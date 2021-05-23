@@ -11,7 +11,7 @@ class MoviesPage extends GetView<MoviesController> {
     return Scaffold(
         backgroundColor: AppTheme.to.theme.backgroundColor,
         appBar: AppBar(
-          title: Text(controller.movieArgument.tr),
+          title: Text(controller.movieArgument.toString().tr),
           backgroundColor: Colors.transparent,
           elevation: 0,
         ),

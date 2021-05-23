@@ -23,7 +23,7 @@ class PopularCarousel extends GetView<PopularController> {
                 ),
                 TextButton(
                   child: Text('Show all'.tr),
-                  onPressed: () => controller.goToMovies('Popular'),
+                  onPressed: () => controller.goToMovies('Most Popular'),
                 ),
               ],
             ),

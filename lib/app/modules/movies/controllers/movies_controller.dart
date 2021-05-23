@@ -11,7 +11,7 @@ class MoviesController extends GetxController
   final String _movieArgument = Get.arguments;
   final urlPath = 'https://image.tmdb.org/t/p/w500/';
 
-  String get movieArgument => _movieArgument;
+  get movieArgument => _movieArgument;
   List<MovieModel> get movieList => _movieList;
   void goToDetails(movie) => Get.toNamed(Routes.DETAILS, arguments: movie);
 
@@ -64,7 +64,7 @@ class MoviesController extends GetxController
       loadUpcoming();
     } else if (argument == 'Top Rated') {
       loadTopRated();
-    } else if (argument == 'Popular') {
+    } else if (argument == 'Most Popular') {
       loadPopularMovies();
     }
   }
