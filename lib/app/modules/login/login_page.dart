@@ -27,9 +27,15 @@ class LoginPage extends GetView<LoginController> {
                 SizedBox(height: 100),
                 LogoText(fontSize: 30),
                 SizedBox(height: 100),
-                InputLogin(hintText: 'Email'),
+                InputLogin(
+                  hintText: 'Email',
+                  controller: controller.emailController,
+                ),
                 SizedBox(height: 30),
-                InputLogin(hintText: 'Password'.tr),
+                InputLogin(
+                  hintText: 'Password'.tr,
+                  controller: controller.passwordController,
+                ),
                 SizedBox(height: 50),
                 LoginButton(),
                 Row(

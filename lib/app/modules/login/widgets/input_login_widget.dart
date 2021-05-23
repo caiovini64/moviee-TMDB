@@ -3,9 +3,13 @@ import 'package:get/get.dart';
 import 'package:tmdb_api/app/theme/app_theme.dart';
 
 class InputLogin extends StatelessWidget {
+  final TextEditingController controller;
   final String hintText;
 
-  const InputLogin({required this.hintText});
+  const InputLogin({
+    required this.hintText,
+    required this.controller,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -18,6 +22,7 @@ class InputLogin extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.only(bottom: 10, top: 10, left: 18),
         child: TextFormField(
+          controller: controller,
           decoration: InputDecoration(
             enabledBorder: InputBorder.none,
             errorBorder: InputBorder.none,

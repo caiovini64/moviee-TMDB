@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "712755891868",
+    "project_id": "moviee-4002b",
+    "storage_bucket": "moviee-4002b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:712755891868:android:8a524bd92d090f6525e759",
+        "android_client_info": {
+          "package_name": "com.example.tmdb_api"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "712755891868-em0rcehr6k8j19mlkfbvbki80q28hb6n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.tmdb_api",
+            "certificate_hash": "899dab3759d84ceb1d6d17c5215368e5177c8b84"
+          }
+        },
+        {
+          "client_id": "712755891868-gilm3ii9mffclufo8s6da48mcc76sebv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAIA9ZCtmmzYWaUhOGY1CsauTOXfbKdhwc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "712755891868-gilm3ii9mffclufo8s6da48mcc76sebv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
