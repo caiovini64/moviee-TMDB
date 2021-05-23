@@ -7,4 +7,5 @@ final Map<String, String> ptBR = {
   'Discover': 'Descubra',
   'CAST': 'ELENCO',
   'RECOMMENDATIONS': 'RECOMENDADOS',
+  'Password': 'Senha',
 };

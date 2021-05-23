@@ -13,7 +13,9 @@ class HttpClient {
   Future<dynamic> get(String url) async {
     var responseJson;
     try {
-      final response = await http.get(Uri.parse(apiBase + url + '?api_key=$apiKey&language=${Localization.locale()}'));
+      final response = await http.get(Uri.parse(apiBase +
+          url +
+          '?api_key=$apiKey&language=${Localization.locale()}'));
       responseJson = _response(response);
     } on SocketException {
       throw FetchDataException('No internet connection');
@@ -21,19 +23,18 @@ class HttpClient {
     return responseJson;
   }
 
-
-dynamic _response(http.Response response) {
-  switch (response.statusCode) {
-    case 200:
-      var responseJson = json.decode(response.body.toString());
-      return (responseJson);
-    case 401:
-      throw UnauthorizedException(response.body.toString());
-    case 404:
-      throw BadRequestException(response.body.toString());
-    default:
-      throw FetchDataException('${response.statusCode} ' +
-          'Error occured while Communication with server');
+  dynamic _response(http.Response response) {
+    switch (response.statusCode) {
+      case 200:
+        var responseJson = json.decode(response.body.toString());
+        return (responseJson);
+      case 401:
+        throw UnauthorizedException(response.body.toString());
+      case 404:
+        throw BadRequestException(response.body.toString());
+      default:
+        throw FetchDataException('${response.statusCode} ' +
+            'Error occured while Communication with server');
+    }
   }
-}
 }
