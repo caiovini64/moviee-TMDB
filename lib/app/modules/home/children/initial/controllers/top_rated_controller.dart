@@ -13,6 +13,10 @@ class TopRatedController extends GetxController with StateMixin {
 
   void goToDetails(movie) => Get.toNamed(Routes.DETAILS, arguments: movie);
 
+  void goToMovies(String value) {
+    Get.toNamed(Routes.MOVIES, arguments: value);
+  }
+
   loadTopRatedMovies() async {
     await movieRepository.getAllTopRated().then((response) {
       change(response, status: RxStatus.success());

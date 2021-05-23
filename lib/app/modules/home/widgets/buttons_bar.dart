@@ -37,7 +37,7 @@ class ButtonsBar extends GetView<HomeController> {
             VerticalDivider(width: 1),
             GestureDetector(
               onTap: () {
-                controller.goToMovies('Upcoming'.tr);
+                controller.goToMovies('Upcoming');
               },
               child: Container(
                 height: Get.height * 0.07,

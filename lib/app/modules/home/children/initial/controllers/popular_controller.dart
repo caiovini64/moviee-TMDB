@@ -16,6 +16,10 @@ class PopularController extends GetxController
 
   void goToDetails(movie) => Get.toNamed(Routes.DETAILS, arguments: movie);
 
+  void goToMovies(String value) {
+    Get.toNamed(Routes.MOVIES, arguments: value);
+  }
+
   loadPopularMovies() async {
     await movieRepository.getAllPopular().then((response) {
       change(response, status: RxStatus.success());
