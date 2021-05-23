@@ -8,7 +8,7 @@ class MoviesPage extends GetView<MoviesController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: Text(controller.movieArgument)),
+        appBar: AppBar(title: Text(controller.movieArgument.tr)),
         body: SafeArea(child: Text('MoviesController')));
   }
 }
