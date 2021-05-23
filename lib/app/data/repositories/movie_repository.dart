@@ -3,9 +3,12 @@ import 'package:tmdb_api/app/data/models/movie_model.dart';
 import 'package:tmdb_api/app/data/services/movie_services.dart';
 
 class MovieRepository {
-  static Future<List<MovieModel>> getAllTopRated() async {
+  final MovieService movieService;
+  MovieRepository(this.movieService);
+
+  Future<List<MovieModel>> getAllTopRated() async {
     List<MovieModel> _list = <MovieModel>[];
-    Map json = await MovieService().getAllTopRated();
+    Map json = await movieService.getAllTopRated();
     final movies = json['results'] as List;
     movies.forEach((element) {
       final movieElement = MovieModel.fromJson(element);
@@ -14,9 +17,9 @@ class MovieRepository {
     return _list;
   }
 
-  static Future<List<MovieModel>> getAllPopular() async {
+  Future<List<MovieModel>> getAllPopular() async {
     List<MovieModel> _list = <MovieModel>[];
-    Map json = await MovieService().getAllPopular();
+    Map json = await movieService.getAllPopular();
     final movies = json['results'] as List;
     movies.forEach((element) {
       final movieElement = MovieModel.fromJson(element);
@@ -25,9 +28,9 @@ class MovieRepository {
     return _list;
   }
 
-  static Future<List<MovieModel>> getAllUpcoming() async {
+  Future<List<MovieModel>> getAllUpcoming() async {
     List<MovieModel> _list = <MovieModel>[];
-    Map json = await MovieService().getAllUpcoming();
+    Map json = await movieService.getAllUpcoming();
     final movies = json['results'] as List;
     movies.forEach((element) {
       final movieElement = MovieModel.fromJson(element);
@@ -36,15 +39,26 @@ class MovieRepository {
     return _list;
   }
 
-  static Future<MovieDetailsModel> getDetails(movieId) async {
-    final json = await MovieService().getDetails(movieId);
+  Future<List<MovieModel>> getNowPlaying() async {
+    List<MovieModel> _list = <MovieModel>[];
+    Map json = await movieService.getNowPlaying();
+    final movies = json['results'] as List;
+    movies.forEach((element) {
+      final movieElement = MovieModel.fromJson(element);
+      _list.add(movieElement);
+    });
+    return _list;
+  }
+
+  Future<MovieDetailsModel> getDetails(movieId) async {
+    final json = await movieService.getDetails(movieId);
     final detail = MovieDetailsModel.fromJson(json);
     return detail;
   }
 
-  static Future<List<MovieModel>> getRecommendations(movieId) async {
+  Future<List<MovieModel>> getRecommendations(movieId) async {
     List<MovieModel> _list = <MovieModel>[];
-    Map json = await MovieService().getRecommendations(movieId);
+    Map json = await movieService.getRecommendations(movieId);
     final movies = json['results'] as List;
     movies.forEach((element) {
       final movieElement = MovieModel.fromJson(element);

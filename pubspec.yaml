@@ -32,6 +32,9 @@ dependencies:
   animated_text_kit: ^4.2.1
   google_fonts: ^2.0.0
 
+  firebase_auth:
+  firebase_core:
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
