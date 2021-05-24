@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:tmdb_api/app/modules/login/widgets/login_form_widget.dart';
 import 'package:tmdb_api/app/theme/app_theme.dart';
 import 'package:tmdb_api/app/utils/shared/widgets/logo_text_widget.dart';
+import 'package:flutter_signin_button/flutter_signin_button.dart';
 
 import 'controllers/login_controller.dart';
-import 'widgets/input_login_widget.dart';
-import 'widgets/login_button_widget.dart';
 
 class LoginPage extends GetView<LoginController> {
   static const route = '/login';
@@ -27,17 +27,7 @@ class LoginPage extends GetView<LoginController> {
                 SizedBox(height: 100),
                 LogoText(fontSize: 30),
                 SizedBox(height: 100),
-                InputLogin(
-                  hintText: 'Email',
-                  controller: controller.emailController,
-                ),
-                SizedBox(height: 30),
-                InputLogin(
-                  hintText: 'Password'.tr,
-                  controller: controller.passwordController,
-                ),
-                SizedBox(height: 50),
-                LoginButton(),
+                LoginForm(),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
@@ -46,6 +36,11 @@ class LoginPage extends GetView<LoginController> {
                       child: Text('Forgot password?'),
                     ),
                   ],
+                ),
+                SignInButton(
+                  Buttons.Google,
+                  text: "Sign up with Google",
+                  onPressed: () {},
                 ),
                 Spacer(),
                 Row(

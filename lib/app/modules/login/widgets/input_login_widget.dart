@@ -22,6 +22,7 @@ class InputLogin extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.only(bottom: 10, top: 10, left: 18),
         child: TextFormField(
+          style: TextStyle(color: AppTheme.to.theme.buttonColor),
           controller: controller,
           decoration: InputDecoration(
             enabledBorder: InputBorder.none,
