@@ -7,6 +7,8 @@ import 'package:tmdb_api/app/modules/login/login_binding.dart';
 import 'package:tmdb_api/app/modules/login/login_page.dart';
 import 'package:tmdb_api/app/modules/movies/movies_binding.dart';
 import 'package:tmdb_api/app/modules/movies/movies_page.dart';
+import 'package:tmdb_api/app/modules/register/register_binding.dart';
+import 'package:tmdb_api/app/modules/register/register_page.dart';
 import 'package:tmdb_api/app/modules/splash/splash_binding.dart';
 import 'package:tmdb_api/app/modules/splash/splash_page.dart';
 
@@ -38,6 +40,11 @@ class AppPages {
       name: Routes.LOGIN,
       page: () => LoginPage(),
       binding: LoginBinding(),
+    ),
+    GetPage(
+      name: Routes.REGISTER,
+      page: () => RegisterPage(),
+      binding: RegisterBinding(),
     ),
   ];
 }
