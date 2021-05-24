@@ -12,11 +12,11 @@ import 'exceptions/unauthorized_exception.dart';
 class ConnectionClient {
   final client;
   const ConnectionClient(this.client);
-  Future<dynamic> get(String url) async {
+  Future<dynamic> get(String? url) async {
     var responseJson;
     try {
       final response = await client.get(Uri.parse(apiBase +
-          url +
+          url! +
           '?api_key=$apiKey&language=${Localization.locale()}'));
       responseJson = _response(response);
     } on SocketException {
