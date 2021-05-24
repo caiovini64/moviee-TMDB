@@ -2,7 +2,7 @@ class MovieModel {
   final bool adult;
   final String backdropPath;
   final List<int> genreIds;
-  final int id;
+  final int? id;
   final String overview;
   final String posterPath;
   final String releaseDate;
@@ -21,14 +21,14 @@ class MovieModel {
 
   factory MovieModel.fromJson(Map<String, dynamic> json) {
     return MovieModel(
-      adult: json['adult'],
-      backdropPath: json['backdrop_path'],
-      genreIds: json['genre_ids'].cast<int>(),
+      adult: json['adult'] ?? false,
+      backdropPath: json['backdrop_path'] ?? '',
+      genreIds: json['genre_ids']?.cast<int>() ?? [],
       id: json['id'],
-      overview: json['overview'],
-      posterPath: json['poster_path'],
-      releaseDate: json['release_date'],
-      title: json['title'],
+      overview: json['overview'] ?? '',
+      posterPath: json['poster_path'] ?? '',
+      releaseDate: json['release_date'] ?? '',
+      title: json['title'] ?? '',
     );
   }
 

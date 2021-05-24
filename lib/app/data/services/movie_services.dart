@@ -1,4 +1,5 @@
-import 'package:tmdb_api/app/utils/network/http_client.dart';
+import 'package:http/http.dart' as http;
+import 'package:tmdb_api/app/utils/network/connection_client.dart';
 
 class MovieService {
   final client;
