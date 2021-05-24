@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tmdb_api/app/modules/login/controllers/login_controller.dart';
-import 'package:tmdb_api/app/modules/login/widgets/input_login_widget.dart';
+import 'package:tmdb_api/app/global/widgets/input_widget.dart';
 
 class LoginForm extends GetView<LoginController> {
   @override
   Widget build(BuildContext context) {
+    //TODO: Implementar validações
     return Column(
       children: [
         InputLogin(
